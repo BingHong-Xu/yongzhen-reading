@@ -1,0 +1,7 @@
+*.exe
+*.obj
+*.pdb
+downloads/
+node_modules/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>書香「永」恆，「貞」惜閱讀－永貞國小圖書館閱讀推動成果網站 (Google Sites 嵌入專用版)</title>
+
+  <!-- Google Fonts: Noto Serif TC & Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&family=Noto+Serif+TC:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       Google Sites Embed Design System (Pure CSS, Mobile-First, RWD)
+       ========================================================================== */
+    :root {
+      --primary: #1b4931;
+      --primary-light: #286343;
+      --primary-dark: #123322;
+      --primary-tint: rgba(27, 73, 49, 0.08);
+      --secondary: #c87d32;
+      --secondary-light: #e0974f;
+      --secondary-tint: rgba(200, 125, 50, 0.1);
+      --accent: #d97706;
+      --bg-body: #f8faf9;
+      --bg-card: #ffffff;
+      --bg-subtle: #f1f5f3;
+      --border-color: #e2e8e5;
+      --text-main: #19231f;
+      --text-secondary: #4a5c54;
+      --text-muted: #73877e;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.07);
+      --shadow-lg: 0 12px 32px rgba(27, 73, 49, 0.12);
+      --font-main: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-title: 'Noto Serif TC', Georgia, serif;
+    }
+
+    [data-theme="dark"] {
+      --bg-body: #0d1411;
+      --bg-card: #15201b;
+      --bg-subtle: #1c2b25;
+      --border-color: #2a3d35;
+      --text-main: #f0fdf4;
+      --text-secondary: #9cb5a8;
+      --text-muted: #6b8277;
+      --primary: #34d399;
+      --primary-light: #6ee7b7;
+      --primary-dark: #10b981;
+      --primary-tint: rgba(52, 211, 153, 0.12);
+      --secondary: #fbbf24;
+      --secondary-light: #fcd34d;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 15px;
+      padding: 12px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Container */
+    .embed-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* Header Banner */
+    .embed-header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary) 70%, var(--secondary-light));
+      color: #ffffff;
+      padding: clamp(1.2rem, 3vw, 2rem) clamp(1rem, 2.5vw, 1.8rem);
+      border-radius: var(--radius-lg);
+      margin-bottom: 1.2rem;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .embed-header::after {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .header-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .theme-toggle-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .theme-toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.35);
+      transform: scale(1.08);
+    }
+
+    .header-title {
+      font-family: var(--font-title);
+      font-size: clamp(1.35rem, 3.5vw, 1.9rem);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-title span {
+      color: #fed7aa;
+    }
+
+    .header-subtitle {
+      font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+      opacity: 0.92;
+      line-height: 1.5;
+    }
+
+    /* Stats Quick Bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 1.2rem;
+    }
+
+    .stat-pill {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 10px 8px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s;
+    }
+
+    .stat-pill:hover {
+      transform: translateY(-2px);
+    }
+
+    .stat-num {
+      font-size: clamp(1.1rem, 2.8vw, 1.45rem);
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+      font-family: var(--font-title);
+    }
+
+    .stat-lbl {
+      font-size: clamp(0.72rem, 1.6vw, 0.8rem);
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    /* Sticky Navigation & Toolbar */
+    .sticky-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-body);
+      padding: 8px 0 10px;
+      border-bottom: 1px solid var(--border-color);
+      backdrop-filter: blur(12px);
+    }
+
+    /* Category Swipe Scroll */
+    .category-scroll {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .category-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cat-btn {
+      white-space: nowrap;
+      padding: 7px 14px;
+      min-height: 38px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-pill);
+      color: var(--text-secondary);
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .cat-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--bg-subtle);
+    }
+
+    .cat-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(27, 73, 49, 0.3);
+    }
+
+    .cat-count {
+      background: rgba(0, 0, 0, 0.08);
+      font-size: 0.72rem;
+      padding: 2px 6px;
+      border-radius: var(--radius-pill);
+    }
+
+    .cat-btn.active .cat-count {
+      background: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+
+    /* Media Type Filter Chips */
+    .media-chips-row {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 6px 0 8px;
+      scrollbar-width: none;
+    }
+
+    .media-chips-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .media-chip {
+      padding: 5px 12px;
+      min-height: 32px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-pill);
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .media-chip.active {
+      background: var(--text-main);
+      color: var(--bg-body);
+      border-color: var(--text-main);
+    }
+
+    /* Search & Filter Controls */
+    .search-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 4px;
+    }
+
+    .search-box {
+      flex: 1;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 9px 36px 9px 34px;
+      min-height: 40px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-main);
+      font-size: 0.88rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-tint);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      pointer-events: none;
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .sort-dropdown {
+      padding: 8px 12px;
+      min-height: 40px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-main);
+      font-size: 0.84rem;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* Result Status */
+    .results-info {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin: 10px 0 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Cards Grid (Super Responsive) */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .card:hover, .card:active {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary);
+    }
+
+    .card-thumb {
+      position: relative;
+      height: 180px;
+      background: var(--bg-subtle);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .card:hover .card-thumb img {
+      transform: scale(1.05);
+    }
+
+    .card-thumb-hero {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      gap: 6px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .card-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(27, 73, 49, 0.92);
+      backdrop-filter: blur(6px);
+      color: #ffffff;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.72rem;
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .card-type-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 28px;
+      height: 28px;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+
+    .card-body {
+      padding: 14px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-sec {
+      font-size: 0.76rem;
+      color: var(--secondary);
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.35;
+      margin-bottom: 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-desc {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 12px;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .card-action {
+      color: var(--primary);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      margin: 1.5rem 0 3rem;
+      flex-wrap: wrap;
+    }
+
+    .page-btn {
+      min-width: 38px;
+      height: 38px;
+      padding: 0 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .page-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .page-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .page-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    /* Modal Dialog */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--bg-card);
+      width: 100%;
+      max-width: 680px;
+      max-height: 90vh;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      overflow-y: auto;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      animation: modalZoom 0.25s ease-out;
+    }
+
+    @keyframes modalZoom {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.55);
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      z-index: 10;
+      transition: transform 0.2s;
+    }
+
+    .modal-close:hover {
+      transform: scale(1.1);
+    }
+
+    .modal-media-wrap {
+      width: 100%;
+      background: #000000;
+      max-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .modal-media-wrap img, .modal-media-wrap video, .modal-media-wrap iframe {
+      width: 100%;
+      max-height: 380px;
+      object-fit: contain;
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+    }
+
+    .modal-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .modal-title {
+      font-family: var(--font-title);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .modal-content {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-content p {
+      margin-bottom: 0.75rem;
+    }
+
+    .modal-btn-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-subtle);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: var(--border-color);
+    }
+
+    /* Back To Top Floating Button */
+    .fab-top {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      z-index: 90;
+      transition: transform 0.2s;
+    }
+
+    .fab-top.visible {
+      display: flex;
+    }
+
+    .fab-top:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="embed-container">
+
+    <!-- Header Banner -->
+    <header class="embed-header">
+      <div class="header-top-row">
+        <span class="header-badge"><i class="fa-solid fa-school"></i> 苗栗縣頭份市永貞國民小學</span>
+        <button class="theme-toggle-btn" id="themeBtn" title="切換深淺色模式" aria-label="切換主題">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+      </div>
+      <h1 class="header-title">書香<span>「永」</span>恆，<span>「貞」</span>惜閱讀</h1>
+      <p class="header-subtitle">圖書館閱讀推動成果展示網 ｜ 閱讀推動教師 徐秉鴻老師 (STEM Teacher Bing)</p>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat-pill">
+        <div class="stat-num" id="stSec">78</div>
+        <div class="stat-lbl">特色專欄</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-num" id="stWish">672</div>
+        <div class="stat-lbl">成果篇章</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-num" id="stMed">517+</div>
+        <div class="stat-lbl">本機多媒體</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-num" id="stExt">400+</div>
+        <div class="stat-lbl">教材外鏈</div>
+      </div>
+    </div>
+
+    <!-- Sticky Toolbar -->
+    <div class="sticky-toolbar">
+      <!-- 8 Categories Horizontal Swipe -->
+      <div class="category-scroll" id="catTabs">
+        <!-- Dynamically rendered -->
+      </div>
+
+      <!-- Media Type Quick Chips -->
+      <div class="media-chips-row" id="mediaChips">
+        <button class="media-chip active" data-type="all"><i class="fa-solid fa-border-all"></i> 全部媒體</button>
+        <button class="media-chip" data-type="year114" style="font-weight:800; background:rgba(217,119,6,0.15); color:#d97706; border-color:rgba(217,119,6,0.4);"><i class="fa-solid fa-star"></i> 🌟 114學年度專區</button>
+        <button class="media-chip" data-type="image"><i class="fa-solid fa-camera"></i> 成果照片</button>
+        <button class="media-chip" data-type="video"><i class="fa-solid fa-play"></i> 影音短片</button>
+        <button class="media-chip" data-type="audio"><i class="fa-solid fa-headphones"></i> 說書與廣播</button>
+        <button class="media-chip" data-type="canva"><i class="fa-solid fa-palette"></i> Canva教材</button>
+        <button class="media-chip" data-type="pdf"><i class="fa-solid fa-file-pdf"></i> PDF文件</button>
+        <button class="media-chip" data-type="form"><i class="fa-solid fa-clipboard-question"></i> 學習單問卷</button>
+      </div>
+
+      <!-- Search & Sort Controls -->
+      <div class="search-row">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="searchInput" placeholder="輸入關鍵字搜尋（例如：MSSR、子竹嚐肉、客語、說書...）">
+          <button class="search-clear" id="searchClear"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <select class="sort-dropdown" id="sortSelect">
+          <option value="newest">🕒 最新發布</option>
+          <option value="oldest">📅 最早發布</option>
+          <option value="media">📷 多媒體優先</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Results Status -->
+    <div class="results-info">
+      <span id="resultsCount">載入中...</span>
+      <span style="font-size:0.75rem; color:var(--text-muted);">點擊卡片可放大查看</span>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="cards-grid" id="cardsGrid">
+      <!-- Dynamically generated cards -->
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination">
+      <!-- Dynamically generated buttons -->
+    </div>
+
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="關閉"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-media-wrap" id="modalMedia"></div>
+      <div class="modal-body">
+        <div class="modal-meta" id="modalMeta"></div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <div class="modal-content" id="modalContent"></div>
+        <div class="modal-btn-row" id="modalActions"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="fab-top" id="fabTop" title="回到頂端" aria-label="回到頂端">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Load Master Data File -->
+  <script src="assets/js/data.js"></script>
+
+  <script>
+    (function () {
+      'use strict';
+
+      const data = window.YONGZHEN_READING_DATA;
+      if (!data) {
+        document.getElementById('cardsGrid').innerHTML = '<p style="text-align:center; padding:2rem;">資料庫載入中或未找到 data.js...</p>';
+        return;
+      }
+
+      const memoryStorage = {};
+      function getSafeStorage(key, defaultVal) {
+        try {
+          if (typeof window !== 'undefined' && window.localStorage) {
+            const val = window.localStorage.getItem(key);
+            return val !== null ? val : defaultVal;
+          }
+        } catch (e) {
+          console.warn('localStorage is restricted; using memory fallback:', e);
+        }
+        return memoryStorage[key] !== undefined ? memoryStorage[key] : defaultVal;
+      }
+
+      function setSafeStorage(key, val) {
+        try {
+          if (typeof window !== 'undefined' && window.localStorage) {
+            window.localStorage.setItem(key, val);
+          }
+        } catch (e) {
+          console.warn('localStorage write failed; saving in memory:', e);
+        }
+        memoryStorage[key] = val;
+      }
+
+      const state = {
+        category: 'all',
+        mediaType: 'all',
+        search: '',
+        sortBy: 'newest',
+        page: 1,
+        perPage: 24,
+        theme: getSafeStorage('yz_embed_theme', 'light')
+      };
+
+      const el = {
+        catTabs: document.getElementById('catTabs'),
+        mediaChips: document.getElementById('mediaChips'),
+        searchInput: document.getElementById('searchInput'),
+        searchClear: document.getElementById('searchClear'),
+        sortSelect: document.getElementById('sortSelect'),
+        resultsCount: document.getElementById('resultsCount'),
+        cardsGrid: document.getElementById('cardsGrid'),
+        pagination: document.getElementById('pagination'),
+        themeBtn: document.getElementById('themeBtn'),
+        modalBackdrop: document.getElementById('modalBackdrop'),
+        modalClose: document.getElementById('modalClose'),
+        modalMedia: document.getElementById('modalMedia'),
+        modalMeta: document.getElementById('modalMeta'),
+        modalTitle: document.getElementById('modalTitle'),
+        modalContent: document.getElementById('modalContent'),
+        modalActions: document.getElementById('modalActions'),
+        fabTop: document.getElementById('fabTop'),
+        stSec: document.getElementById('stSec'),
+        stWish: document.getElementById('stWish'),
+        stMed: document.getElementById('stMed'),
+        stExt: document.getElementById('stExt')
+      };
+
+      function init() {
+        applyTheme(state.theme);
+        renderStats();
+        renderCategories();
+        bindEvents();
+        renderCards();
+      }
+
+      function applyTheme(t) {
+        document.documentElement.setAttribute('data-theme', t);
+        setSafeStorage('yz_embed_theme', t);
+        if (el.themeBtn) {
+          el.themeBtn.innerHTML = t === 'dark' ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
+        }
+      }
+
+      function renderStats() {
+        if (el.stSec) el.stSec.textContent = data.stats.total_sections || 78;
+        if (el.stWish) el.stWish.textContent = data.wishes.length || 672;
+        if (el.stMed) el.stMed.textContent = (data.stats.total_media || 517) + '+';
+        if (el.stExt) el.stExt.textContent = (data.stats.total_links || 400) + '+';
+      }
+
+      function renderCategories() {
+        let html = `
+          <button class="cat-btn ${state.category === 'all' ? 'active' : ''}" data-cat="all">
+            <i class="fa-solid fa-border-all"></i> 全部成果
+            <span class="cat-count">${data.wishes.length}</span>
+          </button>
+        `;
+        data.categories.forEach(c => {
+          html += `
+            <button class="cat-btn ${state.category === c.id ? 'active' : ''}" data-cat="${c.id}">
+              <i class="fa-solid ${c.icon}"></i> ${escapeHtml(c.name)}
+              <span class="cat-count">${c.count}</span>
+            </button>
+          `;
+        });
+        el.catTabs.innerHTML = html;
+      }
+
+      function getFilteredList() {
+        let list = [...data.wishes];
+
+        if (state.category !== 'all') {
+          list = list.filter(w => w.category_id === state.category);
+        }
+
+        if (state.mediaType !== 'all') {
+          if (state.mediaType === 'year114') {
+            list = list.filter(w => {
+              const combined = `${w.title || ''} ${w.snippet || ''} ${w.section_title || ''} ${w.category_name || ''}`;
+              return combined.includes('114');
+            });
+          } else if (state.mediaType === 'image') list = list.filter(w => w.media_type === 'image');
+          else if (state.mediaType === 'video') list = list.filter(w => w.media_type === 'video' || w.link_type === 'youtube');
+          else if (state.mediaType === 'audio') list = list.filter(w => w.media_type === 'audio' || w.link_type === 'spotify');
+          else if (state.mediaType === 'canva') list = list.filter(w => w.link_type === 'canva' || (w.attachment_url && w.attachment_url.includes('canva')));
+          else if (state.mediaType === 'pdf') list = list.filter(w => w.media_type === 'pdf' || w.link_type === 'pdf' || (w.local_media && w.local_media.endsWith('.pdf')));
+          else if (state.mediaType === 'form') list = list.filter(w => w.link_type === 'form');
+        }
+
+        if (state.search.trim()) {
+          const query = state.search.toLowerCase().trim();
+          const tokens = query.split(/\s+/).filter(Boolean);
+          const subTokens = query.match(/114|113|112|115|閱讀|推動|深耕|mssr|說書|書展|主題|客語|美感|生命|自主/gi) || [];
+          const effectiveTokens = tokens.length > 1 ? tokens : (subTokens.length > 1 ? subTokens : [query]);
+
+          list = list.filter(w => {
+            const fullText = (
+              (w.title || '') + ' ' +
+              (w.snippet || '') + ' ' +
+              (w.section_title || '') + ' ' +
+              (w.category_name || '') + ' ' +
+              (w.body_text || '')
+            ).toLowerCase();
+
+            if (fullText.includes(query)) return true;
+            return effectiveTokens.every(tok => fullText.includes(tok.toLowerCase()));
+          });
+        }
+
+        if (state.sortBy === 'newest') {
+          list.sort((a, b) => (b.created_at || '').localeCompare(a.created_at || ''));
+        } else if (state.sortBy === 'oldest') {
+          list.sort((a, b) => (a.created_at || '').localeCompare(b.created_at || ''));
+        } else if (state.sortBy === 'media') {
+          list.sort((a, b) => (b.local_media ? 1 : 0) - (a.local_media ? 1 : 0));
+        }
+
+        return list;
+      }
+
+      function renderCards() {
+        const filtered = getFilteredList();
+        const total = filtered.length;
+
+        if (el.resultsCount) {
+          el.resultsCount.textContent = `共篩選出 ${total} 筆成果紀錄`;
+        }
+
+        if (total === 0) {
+          el.cardsGrid.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--text-muted);">
+              <i class="fa-solid fa-folder-open" style="font-size: 3rem; margin-bottom: 0.8rem; opacity: 0.4;"></i>
+              <h3>找不到符合條件的成果</h3>
+              <p style="font-size: 0.85rem; margin-top: 4px;">請更換搜尋關鍵字或選擇其他分類</p>
+            </div>
+          `;
+          el.pagination.innerHTML = '';
+          return;
+        }
+
+        const totalPages = Math.ceil(total / state.perPage);
+        if (state.page > totalPages) state.page = 1;
+
+        const start = (state.page - 1) * state.perPage;
+        const end = Math.min(start + state.perPage, total);
+        const paged = filtered.slice(start, end);
+
+        let html = '';
+        paged.forEach(w => {
+          const cat = data.categories.find(c => c.id === w.category_id) || { color: '#1b4931', name: '成果' };
+
+          let thumbHtml = '';
+          let typeIcon = '';
+
+          if (w.media_type === 'image' && w.local_media) {
+            typeIcon = '<span class="card-type-icon" title="成果照片"><i class="fa-solid fa-camera"></i></span>';
+            thumbHtml = `
+              <div class="card-thumb">
+                <img src="${w.local_media}" alt="${escapeHtml(w.title)}" loading="lazy" onerror="this.onerror=null; this.src='assets/official/1660015942_634882_53.jpg';">
+                <span class="card-tag" style="background:${cat.color};">${escapeHtml(w.category_name)}</span>
+                ${typeIcon}
+              </div>
+            `;
+          } else if (w.media_type === 'video' || w.link_type === 'youtube') {
+            typeIcon = '<span class="card-type-icon" title="影音播放"><i class="fa-solid fa-play"></i></span>';
+            thumbHtml = `
+              <div class="card-thumb" style="background:linear-gradient(135deg, #1e293b, #0f172a);">
+                <div class="card-thumb-hero"><i class="fa-solid fa-circle-play" style="font-size:2.5rem; color:#ef4444;"></i><span style="font-size:0.8rem; font-weight:700;">影音紀錄</span></div>
+                <span class="card-tag" style="background:${cat.color};">${escapeHtml(w.category_name)}</span>
+                ${typeIcon}
+              </div>
+            `;
+          } else if (w.media_type === 'audio' || w.link_type === 'spotify') {
+            typeIcon = '<span class="card-type-icon" title="說書錄音"><i class="fa-solid fa-headphones"></i></span>';
+            thumbHtml = `
+              <div class="card-thumb" style="background:linear-gradient(135deg, #064e3b, #047857);">
+                <div class="card-thumb-hero"><i class="fa-solid fa-headphones-simple" style="font-size:2.5rem; color:#34d399;"></i><span style="font-size:0.8rem; font-weight:700;">早修廣播與說書錄音</span></div>
+                <span class="card-tag" style="background:${cat.color};">${escapeHtml(w.category_name)}</span>
+                ${typeIcon}
+              </div>
+            `;
+          } else if (w.link_type === 'canva') {
+            typeIcon = '<span class="card-type-icon" title="Canva教材"><i class="fa-solid fa-palette"></i></span>';
+            thumbHtml = `
+              <div class="card-thumb" style="background:linear-gradient(135deg, #0369a1, #0284c7);">
+                <div class="card-thumb-hero"><i class="fa-solid fa-shapes" style="font-size:2.5rem; color:#7dd3fc;"></i><span style="font-size:0.8rem; font-weight:700;">Canva 數位教材</span></div>
+                <span class="card-tag" style="background:${cat.color};">${escapeHtml(w.category_name)}</span>
+                ${typeIcon}
+              </div>
+            `;
+          } else {
+            typeIcon = '<span class="card-type-icon" title="推動成果"><i class="fa-solid fa-book-open"></i></span>';
+            thumbHtml = `
+              <div class="card-thumb" style="background:linear-gradient(135deg, var(--bg-subtle), var(--border-color));">
+                <div class="card-thumb-hero" style="color:var(--text-secondary);"><i class="fa-solid fa-book-open" style="font-size:2.5rem; color:var(--primary);"></i><span style="font-size:0.8rem; font-weight:700;">${escapeHtml(w.category_name)}</span></div>
+                <span class="card-tag" style="background:${cat.color};">${escapeHtml(w.category_name)}</span>
+                ${typeIcon}
+              </div>
+            `;
+          }
+
+          html += `
+            <div class="card" onclick="window.openDetail('${w.id}')" role="button" tabindex="0">
+              ${thumbHtml}
+              <div class="card-body">
+                <div class="card-sec"><i class="fa-solid fa-bookmark"></i> ${escapeHtml(w.section_title)}</div>
+                <h3 class="card-title">${escapeHtml(w.title)}</h3>
+                <p class="card-desc">${escapeHtml(w.snippet)}</p>
+                <div class="card-footer">
+                  <span>${formatDate(w.created_at)}</span>
+                  <span class="card-action">查看詳情 <i class="fa-solid fa-chevron-right"></i></span>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        el.cardsGrid.innerHTML = html;
+        renderPagination(totalPages);
+      }
+
+      function renderPagination(totalPages) {
+        if (totalPages <= 1) {
+          el.pagination.innerHTML = '';
+          return;
+        }
+
+        let html = `
+          <button class="page-btn" ${state.page === 1 ? 'disabled' : ''} onclick="window.setPage(${state.page - 1})">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+        `;
+
+        for (let i = 1; i <= totalPages; i++) {
+          if (i === 1 || i === totalPages || (i >= state.page - 2 && i <= state.page + 2)) {
+            html += `<button class="page-btn ${state.page === i ? 'active' : ''}" onclick="window.setPage(${i})">${i}</button>`;
+          } else if (i === state.page - 3 || i === state.page + 3) {
+            html += `<span style="padding: 0 4px; color: var(--text-muted);">...</span>`;
+          }
+        }
+
+        html += `
+          <button class="page-btn" ${state.page === totalPages ? 'disabled' : ''} onclick="window.setPage(${state.page + 1})">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        `;
+
+        el.pagination.innerHTML = html;
+      }
+
+      window.setPage = function (p) {
+        state.page = p;
+        renderCards();
+        window.scrollTo({ top: 120, behavior: 'smooth' });
+      };
+
+      window.openDetail = function (id) {
+        const wish = data.wishes.find(w => w.id === id);
+        if (!wish) return;
+
+        const cat = data.categories.find(c => c.id === wish.category_id) || { color: '#1b4931' };
+
+        let mediaHtml = '';
+        if (wish.youtube_id) {
+          mediaHtml = `<iframe src="https://www.youtube.com/embed/${wish.youtube_id}?autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media" allowfullscreen></iframe>`;
+        } else if (wish.media_type === 'video' && wish.local_media) {
+          mediaHtml = `<video controls autoplay><source src="${wish.local_media}" type="video/mp4"></video>`;
+        } else if (wish.media_type === 'audio' && wish.local_media) {
+          mediaHtml = `
+            <div style="width:100%; padding:2rem 1rem; background:linear-gradient(135deg, #064e3b, #047857); text-align:center; color:#fff;">
+              <i class="fa-solid fa-headphones-simple" style="font-size:3rem; color:#34d399; margin-bottom:0.8rem;"></i>
+              <audio controls autoplay style="width:100%; max-width:460px;"><source src="${wish.local_media}" type="audio/mpeg"></audio>
+            </div>
+          `;
+        } else if (wish.media_type === 'pdf' || (wish.local_media && wish.local_media.endsWith('.pdf'))) {
+          const pdfPath = wish.local_media || wish.attachment_url;
+          mediaHtml = `
+            <div style="width:100%; padding:2rem 1rem; background:linear-gradient(135deg, #831843, #be185d); text-align:center; color:#fff; border-radius:8px;">
+              <i class="fa-solid fa-file-pdf" style="font-size:3rem; color:#fbcfe8; margin-bottom:0.8rem;"></i>
+              <h4 style="font-size:1.1rem; font-weight:700; margin-bottom:0.5rem;">${escapeHtml(wish.title)}</h4>
+              <p style="font-size:0.85rem; opacity:0.9; margin-bottom:1rem;">📄 官方 PDF 成果文件，可直接開啟或下載：</p>
+              <div style="display:flex; justify-content:center; gap:0.5rem; flex-wrap:wrap;">
+                <a href="${pdfPath}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#fff; color:#be185d; border-color:#fff;">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> 開啟 PDF
+                </a>
+                <a href="${pdfPath}" download class="btn btn-secondary" style="border-color:rgba(255,255,255,0.6); color:#fff;">
+                  <i class="fa-solid fa-download"></i> 下載 PDF
+                </a>
+              </div>
+            </div>
+          `;
+        } else if (wish.link_type === 'canva' || (wish.attachment_url && wish.attachment_url.includes('canva'))) {
+          mediaHtml = `
+            <div style="width:100%; padding:2rem 1rem; background:linear-gradient(135deg, #0369a1, #0284c7); text-align:center; color:#fff; border-radius:8px;">
+              <i class="fa-solid fa-palette" style="font-size:3rem; color:#7dd3fc; margin-bottom:0.8rem;"></i>
+              <h4 style="font-size:1.1rem; font-weight:700; margin-bottom:0.5rem;">${escapeHtml(wish.title)}</h4>
+              <p style="font-size:0.85rem; opacity:0.9; margin-bottom:1rem;">🎨 Canva 數位互動簡報，請於新視窗開啟：</p>
+              <a href="${wish.attachment_url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#fff; color:#0284c7; border-color:#fff;">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> 開啟 Canva 官方網頁
+              </a>
+            </div>
+          `;
+        } else if (wish.media_type === 'image' && wish.local_media) {
+          mediaHtml = `<img src="${wish.local_media}" alt="${escapeHtml(wish.title)}" onerror="this.onerror=null; this.src='assets/official/1660015942_634882_53.jpg';">`;
+        }
+
+        el.modalMedia.innerHTML = mediaHtml;
+        el.modalMedia.style.display = mediaHtml ? 'flex' : 'none';
+
+        el.modalMeta.innerHTML = `
+          <span style="background:${cat.color}; color:#fff; padding:2px 8px; border-radius:12px; font-weight:700;">${escapeHtml(wish.category_name)}</span>
+          <span><i class="fa-solid fa-folder"></i> ${escapeHtml(wish.section_title)}</span>
+          <span><i class="fa-regular fa-clock"></i> ${formatDate(wish.created_at)}</span>
+        `;
+
+        el.modalTitle.textContent = wish.title;
+
+        let content = wish.body_html || '';
+        if (!content && wish.snippet) content = `<p>${escapeHtml(wish.snippet)}</p>`;
+        el.modalContent.innerHTML = content || '<p style="color:var(--text-muted);">本成果以多媒體或線上教材呈現。</p>';
+
+        let actions = '';
+        if (wish.attachment_url) {
+          let btnLabel = '開啟外部數位教材';
+          let btnIcon = 'fa-arrow-up-right-from-square';
+          if (wish.link_type === 'canva') { btnLabel = '開啟 Canva 數位簡報'; btnIcon = 'fa-palette'; }
+          else if (wish.link_type === 'spotify') { btnLabel = '前往 Spotify 收聽'; btnIcon = 'fa-spotify'; }
+          else if (wish.link_type === 'youtube') { btnLabel = 'YouTube 觀看'; btnIcon = 'fa-youtube'; }
+          else if (wish.link_type === 'form') { btnLabel = '填寫學習單 / 問卷'; btnIcon = 'fa-clipboard-question'; }
+
+          actions += `
+            <a href="${wish.attachment_url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <i class="fa-solid ${btnIcon}"></i> ${btnLabel}
+            </a>
+          `;
+        }
+
+        el.modalActions.innerHTML = actions;
+        el.modalBackdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      };
+
+      function closeModal() {
+        el.modalBackdrop.classList.remove('active');
+        el.modalMedia.innerHTML = '';
+        document.body.style.overflow = '';
+      }
+
+      function bindEvents() {
+        if (el.catTabs) {
+          el.catTabs.addEventListener('click', e => {
+            const btn = e.target.closest('.cat-btn');
+            if (!btn) return;
+            el.catTabs.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            state.category = btn.getAttribute('data-cat');
+            state.page = 1;
+            renderCards();
+          });
+        }
+
+        if (el.mediaChips) {
+          el.mediaChips.addEventListener('click', e => {
+            const chip = e.target.closest('.media-chip');
+            if (!chip) return;
+            el.mediaChips.querySelectorAll('.media-chip').forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            state.mediaType = chip.getAttribute('data-type');
+            state.page = 1;
+            renderCards();
+          });
+        }
+
+        if (el.searchInput) {
+          let timer;
+          el.searchInput.addEventListener('input', e => {
+            clearTimeout(timer);
+            const val = e.target.value;
+            if (el.searchClear) el.searchClear.style.display = val ? 'block' : 'none';
+            timer = setTimeout(() => {
+              state.search = val;
+              state.page = 1;
+              renderCards();
+            }, 180);
+          });
+        }
+
+        if (el.searchClear) {
+          el.searchClear.addEventListener('click', () => {
+            el.searchInput.value = '';
+            el.searchClear.style.display = 'none';
+            state.search = '';
+            state.page = 1;
+            renderCards();
+            el.searchInput.focus();
+          });
+        }
+
+        if (el.sortSelect) {
+          el.sortSelect.addEventListener('change', e => {
+            state.sortBy = e.target.value;
+            state.page = 1;
+            renderCards();
+          });
+        }
+
+        if (el.themeBtn) {
+          el.themeBtn.addEventListener('click', () => {
+            state.theme = state.theme === 'dark' ? 'light' : 'dark';
+            applyTheme(state.theme);
+          });
+        }
+
+        if (el.modalClose) el.modalClose.addEventListener('click', closeModal);
+        if (el.modalBackdrop) {
+          el.modalBackdrop.addEventListener('click', e => {
+            if (e.target === el.modalBackdrop) closeModal();
+          });
+        }
+
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape') closeModal();
+        });
+
+        window.addEventListener('scroll', () => {
+          if (el.fabTop) {
+            if (window.scrollY > 250) el.fabTop.classList.add('visible');
+            else el.fabTop.classList.remove('visible');
+          }
+        }, { passive: true });
+
+        if (el.fabTop) {
+          el.fabTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        }
+      }
+
+      function escapeHtml(str) {
+        if (!str) return '';
+        return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      function formatDate(iso) {
+        if (!iso) return '';
+        try {
+          const d = new Date(iso);
+          return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`;
+        } catch {
+          return '';
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+</body>
+</html>
