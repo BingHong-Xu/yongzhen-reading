@@ -402,7 +402,7 @@
             <h3 class="card-title">${escapeHtml(w.title)}</h3>
             <p class="card-snippet">${escapeHtml(w.snippet)}</p>
             <div class="card-footer">
-              <span>${formatDate(w.created_at)}</span>
+              ${w.category_id === 'library_design' ? '<span style="color:var(--text-muted);"><i class="fa-solid fa-compass-drafting"></i> 空間意象藍圖</span>' : `<span>${formatDate(w.created_at)}</span>`}
               <span class="card-action-link">查看詳情 <i class="fa-solid fa-chevron-right"></i></span>
             </div>
           </div>
@@ -537,7 +537,7 @@
     el.modalMetaRow.innerHTML = `
       <span class="card-category-badge" style="position:static; background:${catObj.color};">${escapeHtml(wish.category_name)}</span>
       <span style="font-size:0.85rem; color:var(--text-muted);"><i class="fa-solid fa-folder"></i> ${escapeHtml(wish.section_title)}</span>
-      <span style="font-size:0.85rem; color:var(--text-muted);"><i class="fa-regular fa-clock"></i> ${formatDate(wish.created_at)}</span>
+      ${wish.category_id === 'library_design' ? '<span style="font-size:0.85rem; color:var(--text-muted);"><i class="fa-solid fa-compass-drafting"></i> 空間意象藍圖</span>' : `<span style="font-size:0.85rem; color:var(--text-muted);"><i class="fa-regular fa-clock"></i> ${formatDate(wish.created_at)}</span>`}
     `;
 
     el.modalTitle.textContent = wish.title;
