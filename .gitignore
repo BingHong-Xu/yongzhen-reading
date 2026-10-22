@@ -5,3 +5,13 @@ downloads/
 node_modules/
 .DS_Store
 Thumbs.db
+*.ps1
+*.cs
+padlet*.json
+padlet*.html
+padlet*.js
+wall_*.json
+wishes_*.json
+media_*.json
+surface*.js
+global.js
