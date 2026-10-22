@@ -571,6 +571,13 @@
       `;
     }
 
+    // Always provide a convenient close button at bottom for mobile & tablet ergonomics
+    actionButtons += `
+      <button type="button" class="btn btn-secondary modal-close-bottom-btn" onclick="window.closeModal()" style="margin-left:auto;">
+        <i class="fa-solid fa-xmark"></i> 關閉視窗
+      </button>
+    `;
+
     el.modalActions.innerHTML = actionButtons;
     el.modalBackdrop.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -581,6 +588,7 @@
     el.modalMedia.innerHTML = '';
     document.body.style.overflow = '';
   }
+  window.closeModal = closeModal;
 
   // Lightbox
   window.openLightbox = function (src) {
