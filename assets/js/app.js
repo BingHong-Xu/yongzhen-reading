@@ -243,7 +243,7 @@
     if (state.search.trim()) {
       const query = state.search.toLowerCase().trim();
       const tokens = query.split(/\s+/).filter(Boolean);
-      const subTokens = query.match(/114|113|112|115|閱讀|推動|深耕|mssr|說書|書展|主題|客語|美感|生命|自主/gi) || [];
+      const subTokens = query.match(/114|113|112|115|閱讀|推動|深耕|mssr|說書|書展|主題|客語|生命|自主/gi) || [];
       const effectiveTokens = tokens.length > 1 ? tokens : (subTokens.length > 1 ? subTokens : [query]);
 
       list = list.filter(w => {

@@ -796,19 +796,19 @@
     <!-- Stats Bar -->
     <div class="stats-bar">
       <div class="stat-pill">
-        <div class="stat-num" id="stSec">69</div>
+        <div class="stat-num" id="stSec">63</div>
         <div class="stat-lbl">特色專欄</div>
       </div>
       <div class="stat-pill">
-        <div class="stat-num" id="stWish">645</div>
+        <div class="stat-num" id="stWish">414</div>
         <div class="stat-lbl">成果篇章</div>
       </div>
       <div class="stat-pill">
-        <div class="stat-num" id="stMed">506+</div>
+        <div class="stat-num" id="stMed">278+</div>
         <div class="stat-lbl">本機多媒體</div>
       </div>
       <div class="stat-pill">
-        <div class="stat-num" id="stExt">370+</div>
+        <div class="stat-num" id="stExt">360+</div>
         <div class="stat-lbl">教材外鏈</div>
       </div>
     </div>
@@ -836,7 +836,7 @@
       <div class="search-row">
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
-          <input type="text" id="searchInput" placeholder="輸入關鍵字搜尋（例如：MSSR、子竹嚐肉、客語、說書...）">
+          <input type="text" id="searchInput" placeholder="輸入關鍵字搜尋（例如：MSSR、蘆竹湳、客語、說書...）">
           <button class="search-clear" id="searchClear"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <select class="sort-dropdown" id="sortSelect">
@@ -972,10 +972,10 @@
       }
 
       function renderStats() {
-        if (el.stSec) el.stSec.textContent = data.stats.total_sections || 69;
-        if (el.stWish) el.stWish.textContent = data.wishes.length || 645;
-        if (el.stMed) el.stMed.textContent = (data.stats.total_media || 506) + '+';
-        if (el.stExt) el.stExt.textContent = (data.stats.total_links || 370) + '+';
+        if (el.stSec) el.stSec.textContent = data.stats.total_sections || 63;
+        if (el.stWish) el.stWish.textContent = data.wishes.length || 414;
+        if (el.stMed) el.stMed.textContent = (data.stats.total_media || 278) + '+';
+        if (el.stExt) el.stExt.textContent = (data.stats.total_links || 360) + '+';
       }
 
       function renderCategories() {
@@ -1020,7 +1020,7 @@
         if (state.search.trim()) {
           const query = state.search.toLowerCase().trim();
           const tokens = query.split(/\s+/).filter(Boolean);
-          const subTokens = query.match(/114|113|112|115|閱讀|推動|深耕|mssr|說書|書展|主題|客語|美感|生命|自主/gi) || [];
+          const subTokens = query.match(/114|113|112|115|閱讀|推動|深耕|mssr|說書|書展|主題|客語|生命|自主/gi) || [];
           const effectiveTokens = tokens.length > 1 ? tokens : (subTokens.length > 1 ? subTokens : [query]);
 
           list = list.filter(w => {
