@@ -49,7 +49,7 @@
     viewMode: 'grid', // 'grid' | 'list'
     theme: getSafeStorage('yz_reading_theme', 'light'),
     currentModalWish: null,
-    currentVisionVersion: '4.0',
+    currentVisionVersion: '最終版',
     isDrawerOpen: false
   };
 
@@ -172,7 +172,7 @@
   function populateSectionSelect() {
     if (!el.sectionSelect) return;
 
-    let html = `<option value="all">📂 所有專欄單元 (73個專欄)</option>`;
+    let html = `<option value="all">📂 所有專欄單元 (${data.sections.length}個專欄)</option>`;
     data.sections.forEach(s => {
       html += `<option value="${s.id}">[${escapeHtml(s.category_name)}] ${escapeHtml(s.title)}</option>`;
     });
@@ -371,6 +371,15 @@
             ${typeBadge}
           </div>
         `;
+      } else if (w.media_type === 'excel' || (w.local_media && (w.local_media.endsWith('.xlsx') || w.local_media.endsWith('.xls')))) {
+        typeBadge = '<span class="card-type-icon" title="Excel預算與統計表"><i class="fa-solid fa-file-excel"></i></span>';
+        mediaBlock = `
+          <div class="card-media media-excel-hero" style="background: linear-gradient(135deg, #065f46, #059669);">
+            <div class="media-icon-center"><i class="fa-solid fa-file-excel" style="font-size:2.8rem; color:#a7f3d0;"></i><span style="font-size:0.85rem; font-weight:700; color:#fff;">官方工程預算書 (XLSX)</span></div>
+            <span class="card-category-badge" style="background: ${catObj.color};">${escapeHtml(w.category_name)}</span>
+            ${typeBadge}
+          </div>
+        `;
       } else {
         typeBadge = '<span class="card-type-icon" title="閱讀成果"><i class="fa-solid fa-book-open"></i></span>';
         mediaBlock = `
@@ -492,6 +501,20 @@
           </div>
         </div>
       `;
+    } else if (wish.media_type === 'excel' || (wish.local_media && (wish.local_media.endsWith('.xlsx') || wish.local_media.endsWith('.xls')))) {
+      const xlsxPath = wish.local_media || wish.attachment_url;
+      mediaHtml = `
+        <div style="width:100%; padding:2.5rem 1.5rem; background:linear-gradient(135deg, #065f46, #059669); text-align:center; color:#fff; border-radius:8px;">
+          <i class="fa-solid fa-file-excel" style="font-size:3.5rem; color:#a7f3d0; margin-bottom:1rem;"></i>
+          <h4 style="font-size:1.25rem; font-weight:700; margin-bottom:0.75rem;">${escapeHtml(wish.title)}</h4>
+          <p style="font-size:0.95rem; opacity:0.95; margin-bottom:1.25rem;">📊 本成果為官方詳細工程預算表與單價分析書，可直接點擊下載原檔：</p>
+          <div style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap;">
+            <a href="${xlsxPath}" download class="btn btn-primary" style="background:#fff; color:#065f46; border-color:#fff; font-weight:700;">
+              <i class="fa-solid fa-download"></i> 下載完整預算書 (Excel)
+            </a>
+          </div>
+        </div>
+      `;
     } else if (wish.link_type === 'canva' || (wish.attachment_url && wish.attachment_url.includes('canva'))) {
       mediaHtml = `
         <div style="width:100%; padding:2.5rem 1.5rem; background:linear-gradient(135deg, #0369a1, #0284c7); text-align:center; color:#fff; border-radius:8px;">
@@ -567,6 +590,14 @@
       actionButtons += `
         <a href="${wish.local_media}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
           <i class="fa-solid fa-file-pdf"></i> 在新視窗開啟完整 PDF
+        </a>
+      `;
+    }
+
+    if (wish.local_media && (wish.local_media.endsWith('.xlsx') || wish.local_media.endsWith('.xls'))) {
+      actionButtons += `
+        <a href="${wish.local_media}" download class="btn btn-secondary">
+          <i class="fa-solid fa-file-excel"></i> 下載完整預算書 (Excel)
         </a>
       `;
     }

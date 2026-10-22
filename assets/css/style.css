@@ -1717,6 +1717,73 @@ img {
   text-align: center;
 }
 
+/* 1019 Vision Documents Banner */
+.vision-docs-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-left: 5px solid #0d9488;
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  flex-wrap: wrap;
+}
+
+.vision-docs-info {
+  flex: 1 1 500px;
+}
+
+.vision-docs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(13, 148, 136, 0.12);
+  color: #0d9488;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.vision-docs-info h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.35rem;
+}
+
+.vision-docs-info p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.vision-docs-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.vision-docs-actions .btn {
+  padding: 9px 18px;
+  font-size: 0.88rem;
+}
+
+.media-excel-hero {
+  background: linear-gradient(135deg, #065f46, #059669);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 190px;
+  position: relative;
+}
+
 /* ==========================================================================
    Pagination System
    ========================================================================== */

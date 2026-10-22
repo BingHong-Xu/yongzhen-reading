@@ -800,15 +800,15 @@
         <div class="stat-lbl">特色專欄</div>
       </div>
       <div class="stat-pill">
-        <div class="stat-num" id="stWish">414</div>
+        <div class="stat-num" id="stWish">425</div>
         <div class="stat-lbl">成果篇章</div>
       </div>
       <div class="stat-pill">
-        <div class="stat-num" id="stMed">278+</div>
+        <div class="stat-num" id="stMed">289+</div>
         <div class="stat-lbl">本機多媒體</div>
       </div>
       <div class="stat-pill">
-        <div class="stat-num" id="stExt">360+</div>
+        <div class="stat-num" id="stExt">374+</div>
         <div class="stat-lbl">教材外鏈</div>
       </div>
     </div>
@@ -972,10 +972,10 @@
       }
 
       function renderStats() {
-        if (el.stSec) el.stSec.textContent = data.stats.total_sections || 63;
-        if (el.stWish) el.stWish.textContent = data.wishes.length || 414;
-        if (el.stMed) el.stMed.textContent = (data.stats.total_media || 278) + '+';
-        if (el.stExt) el.stExt.textContent = (data.stats.total_links || 360) + '+';
+        if (el.stSec) el.stSec.textContent = data.stats.total_sections || 64;
+        if (el.stWish) el.stWish.textContent = data.wishes.length || 425;
+        if (el.stMed) el.stMed.textContent = (data.stats.total_media || 289) + '+';
+        if (el.stExt) el.stExt.textContent = (data.stats.total_links || 374) + '+';
       }
 
       function renderCategories() {
@@ -1118,6 +1118,15 @@
                 ${typeIcon}
               </div>
             `;
+          } else if (w.media_type === 'excel' || (w.local_media && (w.local_media.endsWith('.xlsx') || w.local_media.endsWith('.xls')))) {
+            typeIcon = '<span class="card-type-icon" title="Excel預算表"><i class="fa-solid fa-file-excel"></i></span>';
+            thumbHtml = `
+              <div class="card-thumb" style="background:linear-gradient(135deg, #065f46, #059669);">
+                <div class="card-thumb-hero"><i class="fa-solid fa-file-excel" style="font-size:2.5rem; color:#a7f3d0;"></i><span style="font-size:0.8rem; font-weight:700;">工程預算書 (XLSX)</span></div>
+                <span class="card-tag" style="background:${cat.color};">${escapeHtml(w.category_name)}</span>
+                ${typeIcon}
+              </div>
+            `;
           } else {
             typeIcon = '<span class="card-type-icon" title="推動成果"><i class="fa-solid fa-book-open"></i></span>';
             thumbHtml = `
@@ -1219,6 +1228,20 @@
               </div>
             </div>
           `;
+        } else if (wish.media_type === 'excel' || (wish.local_media && (wish.local_media.endsWith('.xlsx') || wish.local_media.endsWith('.xls')))) {
+          const xlsxPath = wish.local_media || wish.attachment_url;
+          mediaHtml = `
+            <div style="width:100%; padding:2rem 1rem; background:linear-gradient(135deg, #065f46, #059669); text-align:center; color:#fff; border-radius:8px;">
+              <i class="fa-solid fa-file-excel" style="font-size:3rem; color:#a7f3d0; margin-bottom:0.8rem;"></i>
+              <h4 style="font-size:1.1rem; font-weight:700; margin-bottom:0.5rem;">${escapeHtml(wish.title)}</h4>
+              <p style="font-size:0.85rem; opacity:0.9; margin-bottom:1rem;">📊 官方詳細工程預算書與工項單價分析，可直接點擊下載：</p>
+              <div style="display:flex; justify-content:center; gap:0.5rem; flex-wrap:wrap;">
+                <a href="${xlsxPath}" download class="btn btn-primary" style="background:#fff; color:#065f46; border-color:#fff;">
+                  <i class="fa-solid fa-download"></i> 下載 Excel 預算表
+                </a>
+              </div>
+            </div>
+          `;
         } else if (wish.link_type === 'canva' || (wish.attachment_url && wish.attachment_url.includes('canva'))) {
           mediaHtml = `
             <div style="width:100%; padding:2rem 1rem; background:linear-gradient(135deg, #0369a1, #0284c7); text-align:center; color:#fff; border-radius:8px;">
@@ -1261,6 +1284,14 @@
           actions += `
             <a href="${wish.attachment_url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
               <i class="fa-solid ${btnIcon}"></i> ${btnLabel}
+            </a>
+          `;
+        }
+
+        if (wish.local_media && (wish.local_media.endsWith('.xlsx') || wish.local_media.endsWith('.xls'))) {
+          actions += `
+            <a href="${wish.local_media}" download class="btn btn-secondary">
+              <i class="fa-solid fa-file-excel"></i> 下載工程預算書 (Excel)
             </a>
           `;
         }
