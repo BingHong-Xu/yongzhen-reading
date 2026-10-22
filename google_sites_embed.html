@@ -796,19 +796,19 @@
     <!-- Stats Bar -->
     <div class="stats-bar">
       <div class="stat-pill">
-        <div class="stat-num" id="stSec">63</div>
+        <div class="stat-num" id="stSec">64</div>
         <div class="stat-lbl">特色專欄</div>
       </div>
       <div class="stat-pill">
-        <div class="stat-num" id="stWish">424</div>
+        <div class="stat-num" id="stWish">416</div>
         <div class="stat-lbl">成果篇章</div>
       </div>
       <div class="stat-pill">
-        <div class="stat-num" id="stMed">288+</div>
+        <div class="stat-num" id="stMed">285+</div>
         <div class="stat-lbl">本機多媒體</div>
       </div>
       <div class="stat-pill">
-        <div class="stat-num" id="stExt">373+</div>
+        <div class="stat-num" id="stExt">365+</div>
         <div class="stat-lbl">教材外鏈</div>
       </div>
     </div>
@@ -829,7 +829,6 @@
         <button class="media-chip" data-type="audio"><i class="fa-solid fa-headphones"></i> 說書與廣播</button>
         <button class="media-chip" data-type="canva"><i class="fa-solid fa-palette"></i> Canva教材</button>
         <button class="media-chip" data-type="pdf"><i class="fa-solid fa-file-pdf"></i> PDF文件</button>
-        <button class="media-chip" data-type="form"><i class="fa-solid fa-clipboard-question"></i> 學習單問卷</button>
       </div>
 
       <!-- Search & Sort Controls -->
@@ -973,9 +972,9 @@
 
       function renderStats() {
         if (el.stSec) el.stSec.textContent = data.stats.total_sections || 64;
-        if (el.stWish) el.stWish.textContent = data.wishes.length || 424;
-        if (el.stMed) el.stMed.textContent = (data.stats.total_media || 288) + '+';
-        if (el.stExt) el.stExt.textContent = (data.stats.total_links || 373) + '+';
+        if (el.stWish) el.stWish.textContent = data.wishes.length || 416;
+        if (el.stMed) el.stMed.textContent = (data.stats.total_media || 285) + '+';
+        if (el.stExt) el.stExt.textContent = (data.stats.total_links || 365) + '+';
       }
 
       function renderCategories() {
@@ -1279,7 +1278,7 @@
           if (wish.link_type === 'canva') { btnLabel = '開啟 Canva 數位簡報'; btnIcon = 'fa-palette'; }
           else if (wish.link_type === 'spotify') { btnLabel = '前往 Spotify 收聽'; btnIcon = 'fa-spotify'; }
           else if (wish.link_type === 'youtube') { btnLabel = 'YouTube 觀看'; btnIcon = 'fa-youtube'; }
-          else if (wish.link_type === 'form') { btnLabel = '填寫學習單 / 問卷'; btnIcon = 'fa-clipboard-question'; }
+          else if (wish.link_type === 'form') { btnLabel = '開啟線上學習單'; btnIcon = 'fa-clipboard-question'; }
 
           actions += `
             <a href="${wish.attachment_url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
