@@ -796,19 +796,19 @@
     <!-- Stats Bar -->
     <div class="stats-bar">
       <div class="stat-pill">
-        <div class="stat-num" id="stSec">78</div>
+        <div class="stat-num" id="stSec">69</div>
         <div class="stat-lbl">特色專欄</div>
       </div>
       <div class="stat-pill">
-        <div class="stat-num" id="stWish">686</div>
+        <div class="stat-num" id="stWish">645</div>
         <div class="stat-lbl">成果篇章</div>
       </div>
       <div class="stat-pill">
-        <div class="stat-num" id="stMed">538+</div>
+        <div class="stat-num" id="stMed">506+</div>
         <div class="stat-lbl">本機多媒體</div>
       </div>
       <div class="stat-pill">
-        <div class="stat-num" id="stExt">400+</div>
+        <div class="stat-num" id="stExt">370+</div>
         <div class="stat-lbl">教材外鏈</div>
       </div>
     </div>
@@ -972,10 +972,10 @@
       }
 
       function renderStats() {
-        if (el.stSec) el.stSec.textContent = data.stats.total_sections || 78;
-        if (el.stWish) el.stWish.textContent = data.wishes.length || 686;
-        if (el.stMed) el.stMed.textContent = (data.stats.total_media || 538) + '+';
-        if (el.stExt) el.stExt.textContent = (data.stats.total_links || 400) + '+';
+        if (el.stSec) el.stSec.textContent = data.stats.total_sections || 69;
+        if (el.stWish) el.stWish.textContent = data.wishes.length || 645;
+        if (el.stMed) el.stMed.textContent = (data.stats.total_media || 506) + '+';
+        if (el.stExt) el.stExt.textContent = (data.stats.total_links || 370) + '+';
       }
 
       function renderCategories() {
