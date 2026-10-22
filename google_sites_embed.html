@@ -227,6 +227,7 @@
       padding-bottom: 8px;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
     }
 
     .category-scroll::-webkit-scrollbar {
@@ -284,6 +285,8 @@
       overflow-x: auto;
       padding: 6px 0 8px;
       scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
     }
 
     .media-chips-row::-webkit-scrollbar {
@@ -291,13 +294,13 @@
     }
 
     .media-chip {
-      padding: 5px 12px;
-      min-height: 32px;
+      padding: 6px 14px;
+      min-height: 36px;
       background: var(--bg-subtle);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-pill);
       color: var(--text-secondary);
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       font-weight: 700;
       cursor: pointer;
       display: inline-flex;
@@ -400,10 +403,53 @@
       margin-bottom: 2rem;
     }
 
+    @media (max-width: 768px) {
+      .embed-wrap {
+        padding: 8px 10px 24px;
+      }
+      .embed-header {
+        padding: 1.25rem 1.1rem;
+      }
+    }
+
     @media (max-width: 640px) {
       .cards-grid {
         grid-template-columns: 1fr;
         gap: 12px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+      }
+      .stat-pill {
+        padding: 8px 6px;
+      }
+      .stat-num {
+        font-size: 1.25rem;
+      }
+      .search-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .sort-dropdown {
+        width: 100%;
+      }
+      .modal-card {
+        max-height: min(94vh, 94dvh);
+        border-radius: var(--radius-md);
+      }
+      .modal-body {
+        padding: 1.15rem 1rem;
+      }
+      .modal-btn-row {
+        flex-direction: column;
+      }
+      .modal-btn-row .btn {
+        width: 100%;
+        justify-content: center;
       }
     }
 
@@ -636,21 +682,24 @@
 
     .modal-close {
       position: absolute;
-      top: 14px;
-      right: 14px;
-      width: 34px;
-      height: 34px;
+      top: 12px;
+      right: 12px;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
       border-radius: 50%;
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(0, 0, 0, 0.65);
       color: #ffffff;
-      border: none;
+      border: 1px solid rgba(255, 255, 255, 0.25);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
+      font-size: 1.15rem;
       z-index: 10;
-      transition: transform 0.2s;
+      transition: transform 0.2s, background 0.2s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
     }
 
     .modal-close:hover {
@@ -1287,13 +1336,7 @@
           `;
         }
 
-        if (wish.local_media && (wish.local_media.endsWith('.xlsx') || wish.local_media.endsWith('.xls'))) {
-          actions += `
-            <a href="${wish.local_media}" download class="btn btn-secondary">
-              <i class="fa-solid fa-file-excel"></i> 下載工程預算書 (Excel)
-            </a>
-          `;
-        }
+
 
         el.modalActions.innerHTML = actions;
         el.modalBackdrop.classList.add('active');

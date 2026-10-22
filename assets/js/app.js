@@ -625,11 +625,16 @@
   window.openLightbox = function (src) {
     el.lightboxImg.src = src;
     el.lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
   };
 
   function closeLightbox() {
     el.lightbox.classList.remove('active');
     el.lightboxImg.src = '';
+    // Only restore scroll if modal is not active
+    if (!el.modalBackdrop.classList.contains('active')) {
+      document.body.style.overflow = '';
+    }
   }
 
   // Bind Events
